@@ -1,0 +1,368 @@
+
+/* CONFIGURAÇÕES GERAIS */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eaf2ff;
+    color: #123;
+    line-height: 1.6;
+}
+
+/* CABEÇALHO */
+header {
+    background: #0a3d8f;
+    color: white;
+    text-align: center;
+    padding: 24px 16px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* SEÇÕES E CARDS */
+main {
+    width: min(900px, 92%);
+    margin: 24px auto;
+}
+
+.card {
+    background: white;
+    padding: 22px;
+    margin-bottom: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #0002;
+    scroll-margin-top: 16px;
+}
+
+.card h2 {
+    color: #0a3d8f;
+    margin-top: 0;
+}
+
+.info-card {
+    background: #f5f8ff;
+    padding: 16px;
+    margin-top: 14px;
+    border-radius: 10px;
+    border-left: 4px solid #0a3d8f;
+}
+
+.info-card h3 {
+    margin-top: 0;
+}
+
+.info-card ul {
+    padding-left: 22px;
+}
+
+/* CARDS DE DENGUE E ZIKA */
+.doencas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.dengue {
+    background: #fff1f0;
+    border-left-color: #d93636;
+}
+
+.zika {
+    background: #f0f8ff;
+    border-left-color: #2878c8;
+}
+
+/* DADOS ESTATÍSTICOS */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    text-align: center;
+    margin: 24px 0;
+}
+
+.stats div {
+    padding: 14px 8px;
+    background: #f5f8ff;
+    border-radius: 10px;
+}
+
+.stats strong,
+.stats span {
+    display: block;
+}
+
+.stats strong {
+    color: #0a3d8f;
+    font-size: clamp(20px, 4vw, 28px);
+}
+
+/* FONTES E AVISOS */
+.fonte,
+.aviso {
+    color: #526174;
+    font-size: 13px;
+}
+
+/* BOTÕES */
+button {
+    background: #0a3d8f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 16px;
+    margin: 5px 5px 5px 0;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+button:hover {
+    background: #08306e;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+.sugestoes-bairros li:focus-visible {
+    outline: 3px solid #f0ad4e;
+    outline-offset: 3px;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* FORMULÁRIOS */
+input,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 6px 0 16px;
+    border: 1px solid #c9d9f5;
+    border-radius: 8px;
+    font: inherit;
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+/* CHECKLIST */
+#checklist-itens label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eaf2ff;
+    cursor: pointer;
+}
+
+#checklist-itens input {
+    width: auto;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.progress {
+    height: 20px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 18px;
+}
+
+#barra {
+    width: 0;
+    height: 100%;
+    background: #2ecc71;
+    transition: width 0.3s;
+}
+
+#porcentagem {
+    font-weight: bold;
+}
+
+/* QUIZ E DENÚNCIAS */
+#feedback {
+    font-weight: bold;
+}
+
+#lista-denuncias {
+    list-style: none;
+    padding: 0;
+}
+
+#lista-denuncias li {
+    background: #eaf2ff;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 10px;
+    overflow-wrap: anywhere;
+}
+
+/* IMAGENS DAS DOENÇAS */
+.imagem-doenca {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 6px #0002;
+}
+
+/*
+IMAGENS DOS FATORES SOCIAIS
+As imagens mantêm a proporção original,
+sem cortes em computadores ou celulares.
+*/
+.imagem-fator {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 8px;
+    margin: 0 auto 15px;
+    box-shadow: 0 2px 6px #0002;
+}
+
+/* COMPUTADORES E TELAS GRANDES */
+@media (min-width: 601px) {
+    .imagem-fator {
+        max-height: 450px;
+    }
+}
+
+/* AUTOCOMPLETAR DE BAIRROS */
+.autocomplete-container {
+    position: relative;
+    width: 100%;
+}
+
+.sugestoes-bairros {
+    position: absolute;
+    top: calc(100% - 16px);
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    margin: 0;
+    padding: 5px 0;
+    list-style: none;
+    background: white;
+    border: 1px solid #c9d9f5;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px #0002;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.sugestoes-bairros li {
+    padding: 10px 12px;
+    cursor: pointer;
+    color: #123;
+}
+
+.sugestoes-bairros li:hover,
+.sugestoes-bairros li:focus {
+    background: #eaf2ff;
+    outline: none;
+}
+
+.sugestoes-bairros li[aria-selected="true"] {
+    background: #d6e6ff;
+}
+
+.sugestoes-bairros[hidden] {
+    display: none;
+}
+
+/* RODAPÉ */
+footer {
+    text-align: center;
+    background: #0a3d8f;
+    color: white;
+    padding: 16px;
+}
+
+/* CELULARES E TELAS PEQUENAS */
+@media (max-width: 600px) {
+    header {
+        padding: 20px 12px;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .doencas {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        gap: 6px;
+    }
+
+    .stats div {
+        padding: 10px 4px;
+    }
+
+    .imagem-doenca {
+        height: 170px;
+    }
+
+    .imagem-fator {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        object-fit: contain;
+    }
+
+    button {
+        max-width: 100%;
+    }
+}
